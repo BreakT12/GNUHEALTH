@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<tryton>
+	<data>
+
+		<record model="ir.ui.view" id="gnuhealth_agree_view">
+			<field name="model">gnuhealth.agree</field>
+			<field name="type">form</field>
+			<field name="name">gnuhealth_agree</field>
+		</record>
+
+		<record model="ir.ui.view" id="gnuhealth_agree_tree">
+			<field name="model">gnuhealth.agree</field>
+			<field name="type">tree</field>
+			<field name="name">gnuhealth_agree_tree</field>
+		</record>
+
+		<record model="ir.action.act_window" id="gnuhealth_action_agree">
+			<field name="name">Agree</field>
+			<field name="res_model">gnuhealth.agree</field>
+		</record>
+
+		<record model="ir.action.act_window.view" id="act_agree_list_view">
+			<field name="sequence" eval="20"/>
+			<field name="view" ref="gnuhealth_agree_tree"/>
+			<field name="act_window" ref="gnuhealth_action_agree"/>
+		</record>
+
+		<record model="ir.action.act_window.view" id="act_agree_form_view">
+			<field name="sequence" eval="20"/>
+			<field name="view" ref="gnuhealth_agree_view"/>
+			<field name="act_window" ref="gnuhealth_action_agree"/>
+		</record>
+
+		<menuitem name="Agreements" id="menu"/>
+		<menuitem name="Agree" parent="menu" id="agreements" action="gnuhealth_action_agree" sequence="10"/>
+	</data>
+</tryton>
